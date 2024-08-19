@@ -1,19 +1,24 @@
 
-for (let i = 1; i <= 10; i++) {
+// 1 - imprimir numero 1 ate 10
+
+for (let i = 1; i <= 10; i++)
+{
     console.log(i);
 }
 
+// 2 - imprimir uma palavra ao contrario
+// ex: monitor -> rotinom
 
-// imprimie uma palavra ao contrario
-
-
-
-let palavra = "monitor";
-let nova = " ";
-
-for (let ini = palavra.length -1; ini>=0; i-=1)
+function reverter(palavra)
 {
-    nova += palavra.charAt(ini);
+    let nova = "";
+
+    for (let ini = palavra.length - 1; ini >= 0; ini -= 1)
+    {
+        nova += palavra.charAt(ini);
+    }
+
+    return nova;
 }
 
-console.log (nova);
+module.exports = reverter;

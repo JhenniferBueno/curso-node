@@ -1,8 +1,22 @@
-const fs = require ("fs");
+// modulo do node
+const fs = require("fs/promises");
+// modulo proprio
+const reverso = require("./exercicios");
 
-fs.readFile("json.js" ,"utf-8", function( erro,dados){
+//modulo externo
+const excel = require("excel");
 
-    console.log(erro);
-    console.log(dados);
+excel("arquivo.xslx").then(function(data)
+{
 
 })
+
+console.log("antes");
+
+fs.readFile("json.js", "utf8", function(erro, dados){
+    console.log("dentro");
+    console.log(erro);
+    console.log( reverso(dados) );
+});
+
+console.log("depois");
