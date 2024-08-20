@@ -10,8 +10,15 @@ app.get ("/" , function(req,res){
 });
 
 app.get("/contato", function (req,res){
-    res.send("<html><body><h1>Pagina de Contato</html></body></h1>");
-})
+    res.sendFile(__dirname + "/form.html");
+
+});
+
+app.get("/lista", function(req, res)
+{
+    res.sendFile( __dirname + "/lista.csv");
+
+});
 
 app.post("/contato", function (req,res)
 {
