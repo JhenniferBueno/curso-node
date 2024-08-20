@@ -18,11 +18,11 @@ function lerNum()
         console.log("imprimir todos os numeros:", numInt);
         if (numInt % 2===0)
         {
-            PAR.push(pares);
+            pares.push(pares);
             console.log("imprimir todos os numeros:", pares);
         }else
         {
-            impar.push(impares);
+            impares.push(impares);
             console.log("imprimir todos os numeros:", impares);
         }
  
