@@ -1,4 +1,4 @@
-// modulo do node
+/// modulo do node
 const fs = require("fs/promises");
 // modulo proprio
 const reverso = require("./exercicios");
