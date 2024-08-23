@@ -19,19 +19,20 @@ async function lerDados()
     let dados = await pasta.find({}).toArray();
     await db.close();
 
-    console.log(dados);
+    return dados;
 
 }
-async function cadastrar()
+async function cadastrar(nome, email, cidade)
 {
     let db = await conexao.connect();
     let pasta = db.db("jhennifer").collection("contatos");
 
     let pessoa = 
     {
-        nome: "Wesley",
-        email: "wesley.safadao@gmail.com",
-        cidade: "Ponta Grossa",
+        nome: nome,
+        email: email,
+        cidade: cidade,
+
     };
     let retorno = await pasta.insertOne (pessoa)
     await db.close();
@@ -48,6 +49,8 @@ async function atualizar()
     let valor = {email: "tereza.ferrer@gmail.com"};
     let retorno = await pasta.updateOne (pessoa, {$set: valor});
     db.close();
+
+    console.log(retorno);
    
 };
 
@@ -60,7 +63,15 @@ async function deletar()
     let retorno = await pasta.deleteOne (pessoa);
 
     db.close();
+
     console.log (retorno);
 
 }
-deletar();
+module.exports = 
+{
+
+    deletar,
+    atualizar,
+    cadastrar,
+    lerDados,
+}
